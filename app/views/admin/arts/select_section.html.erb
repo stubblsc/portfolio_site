@@ -1,0 +1,23 @@
+<br>
+<br>
+<br>
+<div class="col-md-12">
+	<div class="col-md-1"></div>
+	<div class="jumbotron col-md-10 text-center">
+		<u><h2>Select section</h2></u>
+		<br>
+		<% count = 0 %>
+		<% @sections.each do |section| %>
+			<div class="col-md-4">
+				<%= link_to section.title, admin_arts_view_by_section_path(section.id), class: "btn btn-lg btn-primary" %>
+			</div>
+			<% count += 1 %>
+			<% if count % 3 == 0 %>
+				<br>
+				<br>
+				<br>
+				<% count = 0 %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

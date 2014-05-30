@@ -1,0 +1,38 @@
+<div class="col-md-6 offset-1">
+<h1>Listing sections</h1>
+
+<%= form_tag admin_sections_order_path, :method => :put do %>
+  <table class="table table-condensed table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Order</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <div class="col-md-12">
+        <% @sections.each do |section| %>
+          <%= fields_for "sections[]", section do |f| %>
+            <tr>
+              <td><%= section.title %></td>
+              <td><%= f.select :order, 1..Section.all.count, {}, {class: "form-control"} %></td>
+              <td><%= link_to 'Show', admin_section_path(section), class: "btn btn-xs btn-info" %></td>
+              <td><%= link_to 'Edit', edit_admin_section_path(section), class: "btn btn-xs btn-warning" %></td>
+              <td><%= link_to 'Destroy', admin_section_path(section), class: "btn btn-xs btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+  <div class="actions">
+    <%= link_to 'New Section', new_admin_section_path, class: "btn btn-primary" %>
+    <%= submit_tag "Order sections", class: "btn btn-warning" %>
+  </div>
+<% end %>
+
+</div>

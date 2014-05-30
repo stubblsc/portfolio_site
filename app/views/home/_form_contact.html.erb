@@ -1,0 +1,21 @@
+<%= form_tag %>
+  <div class="field">
+    <%= label_tag "Name:" %><br>
+    <%= text_field_tag :from_name, nil, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= label_tag "Email:" %><br>
+    <%= text_field_tag :from_email, nil, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= label_tag :subject %><br>
+    <%= text_field_tag :subject, nil, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= label_tag :message %><br>
+    <%= text_area_tag :message, nil, rows: 8, class: "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= submit_tag "Send", class: "btn btn-md btn-primary" %>
+  </div>

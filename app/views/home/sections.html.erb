@@ -1,0 +1,27 @@
+<br>
+<br>
+<br>
+<div class="col-md-12">
+	<div class="col-md-1"></div>
+	<div class="col-md-10 jumbotron">
+		<div class="col-md-12">
+			<h1><%= @section.title %></h1>
+		</div>
+		<table class="table table-condensed table-striped">
+			<% count = 0 %>
+			<% @arts.each do |art| %>
+				<% if count % 3 == 0 %>
+					<tr><td align=center><a href="<%= art.piece.url(:original) %>" data-lightbox="<%= art.section.title %>" data-title="<%= art.title %>"><%= image_tag(art.piece.url(:medium)) %></a><br><%= link_to "Details", art_details_path(art.id) %></td>
+					<% count += 1 %>
+				<% elsif count % 3 == 1 %>
+					<td align=center><a href="<%= art.piece.url(:original) %>" data-lightbox="<%= art.section.title %>" data-title="<%= art.title %>"><%= image_tag(art.piece.url(:medium)) %></a><br><%= link_to "Details", art_details_path(art.id) %></td>
+					<% count += 1 %>
+				<% else %>
+					<td align=center><a href="<%= art.piece.url(:original) %>" data-lightbox="<%= art.section.title %>" data-title="<%= art.title %>"><%= image_tag(art.piece.url(:medium)) %></a><br><%= link_to "Details", art_details_path(art.id) %></td></tr>
+					<% count += 1 %>
+				<% end %>
+			<% end %>
+		</table>
+	</div>
+	<div class="col-md-1"></div>
+</div>

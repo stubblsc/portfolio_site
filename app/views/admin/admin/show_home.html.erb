@@ -1,0 +1,16 @@
+<div class="col-md-4 offset-1"></br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Background:</strong>
+  <br>
+  <%= image_tag @home.background.url(:medium) %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @home.text %>
+</p>
+
+<%= link_to 'Edit', admin_edit_home_path(@home) %>
+</div>

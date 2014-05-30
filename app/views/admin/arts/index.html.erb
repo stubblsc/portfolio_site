@@ -1,0 +1,40 @@
+<div class="col-md-12 offset-1">
+<h1>Listing arts</h1>
+
+<table class="table table-condensed table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Section</th>
+      <th>Medium</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Order</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arts.each do |art| %>
+      <tr>
+        <td><%= art.title %></td>
+        <% section = art.section %>
+        <td><%= link_to section.title, admin_arts_view_by_section_path(section.id) %></td>
+        <td><%= art.medium %></td>
+        <td><%= art.description %></td>
+        <td><%= image_tag art.piece.url(:thumb) %></td>
+        <td><%= art.order %></td>
+        <td><%= link_to 'Show', admin_art_path(art), class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_admin_art_path(art), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', admin_art_path(art), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Art', new_admin_art_path, class: "btn btn-primary" %>
+</div>

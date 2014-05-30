@@ -1,0 +1,17 @@
+<div class="col-md-4 offset-1"></br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @section.title %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @section.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_section_path(@section) %> |
+<%= link_to 'Back', admin_sections_path %>
+</div>
