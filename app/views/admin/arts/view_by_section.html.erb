@@ -1,0 +1,47 @@
+<div class="col-md-12 offset-1">
+<h1><%= @section.title %> arts</h1>
+
+<%= form_tag admin_arts_order_by_section_path, :method => :put do %>
+
+  <table class="table table-condensed table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Medium</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Order</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <div class="col-md-12">
+        <% @arts.each do |art| %>
+          <%= fields_for "arts[]", art do |f| %>
+            <tr>
+              <td><%= art.title %></td>
+              <td><%= art.medium %></td>
+              <td><%= art.description %></td>
+              <td><%= image_tag art.piece.url(:thumb) %></td>
+              <td><%= f.select :order, 1..@arts.all.count, {}, {class: "form-control"} %></td>
+              <td><%= link_to 'Show', admin_art_path(art), class: "btn btn-info btn-xs" %></td>
+              <td><%= link_to 'Edit', edit_admin_art_path(art), class: "btn btn-warning btn-xs" %></td>
+              <td><%= link_to 'Destroy', admin_art_by_section_path(art), class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </div>
+    </tbody>
+  </table>
+  <div class="actions">
+    <div class="col-md-7">
+      <%= link_to 'New Section', new_admin_section_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-5">
+      <%= submit_tag "Order sections", class: "btn btn-warning" %>
+    </div>
+  </div>
+<% end %>
+</div>

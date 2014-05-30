@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+<div class="col-md-12 jumbotron">
+<div class="col-md-12">
+	<h1 class="text-center">Admin page</h1>
+</div>
+<div class="col-md-3 text-center">
+	<h2>Home</h2><br>
+	<%= link_to 'View Home', admin_home_path(@home), class: "btn btn-primary" %>
+	<%= link_to 'Edit Home', admin_edit_home_path(@home), class: "btn btn-info" %>
+</div>
+<div class="col-md-3 text-center">
+	<h2>About</h2><br>
+	<%= link_to 'View About', admin_about_path(@about), class: "btn btn-primary" %>
+	<%= link_to 'Edit About', admin_edit_about_path(@about), class: "btn btn-info" %>
+</div>
+<div class="col-md-3 text-center">
+	<h2>Sections</h2><br>
+	<%= link_to 'View Sections', admin_sections_path, class: "btn btn-primary" %>
+	<%= link_to 'New Section', new_admin_section_path, class: "btn btn-info" %>	
+</div>
+<div class="col-md-3 text-center">
+	<h2>Arts</h2><br>
+	<%= link_to 'View Arts', admin_arts_path, class: "btn btn-primary" %>
+	<%= link_to 'New Arts', new_admin_art_path, class: "btn btn-info" %>
+	<br><br>
+	<%= link_to 'View By Section', admin_arts_select_section_path, class: "btn btn-warning" %>
+</div>
+</div>

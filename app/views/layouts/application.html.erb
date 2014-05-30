@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MomArtSite</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag    "lightbox.css" %>
+      <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
+
+  <%= stylesheet_link_tag    "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" %>
+  <%#= stylesheet_link_tag "journal", :media => "all" %>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css" %>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" %>
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js" %>
+  <%= javascript_include_tag "lightbox.min.js" %>
+  <%= csrf_meta_tags %>
+</head>
+<body oncontextmenu="return false;">
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-fixed-top col-md-12">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Lynn Stubblebine</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
+        <% @sections_list.each do |section| %>
+          <li><%= link_to section.title, view_sections_by_title_path(section.id) %></li>
+        <% end %>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="col-md-8"></br></br></div>
+
+<%= yield %>
+
+<%= javascript_include_tag "readable" %>
+<%= yield(:page_javascript) if content_for?(:page_javascript) %>
+
+</body>
+</html>

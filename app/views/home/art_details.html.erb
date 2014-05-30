@@ -1,0 +1,33 @@
+<div class="col-md-12">
+<div class="col-md-4 offset-1"></br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @art.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <br>
+  <%= image_tag @art.piece.url(:medium) %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @art.section.title %>
+</p>
+
+<p>
+  <strong>Medium:</strong>
+  <%= @art.medium %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @art.description %>
+</p>
+
+<%= link_to 'Back', view_sections_by_title_path(@art.section_id) %>
+</div>
+</div>

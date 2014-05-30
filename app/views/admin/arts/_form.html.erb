@@ -1,0 +1,38 @@
+<%= form_for [:admin, @art] do |f| %>
+  <% if @art.errors.any? %>
+    <div id="error_explanation">
+      <h2 class="label label-danger"><%= pluralize(@art.errors.count, "error") %> prohibited this art from being saved:</h2>
+
+      <ul>
+      <% @art.errors.full_messages.each do |msg| %>
+        <li class="label label-danger"><%= msg %></li>
+        <BR>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :piece %><br>
+    <%= f.file_field :piece, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :section_id, "Section" %><br>
+    <%= f.select :section_id, options_for_select(Section.all.order(:order).map{|section| [section.title, section.id]}, @art.section_id), {}, {:class => 'form-control'} %>
+  </div>
+  <div class="field">
+    <%= f.label :medium %><br>
+    <%= f.text_field :medium, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
