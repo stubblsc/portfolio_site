@@ -1,5 +1,8 @@
 <div class="col-md-4 offset-1"></br>
-<p id="notice"><%= notice %></p>
+
+<% if notice %>
+<p class="alert alert-success"><%= notice %></p>
+<% end %>
 
 <p>
   <strong>Background:</strong>
@@ -8,9 +11,14 @@
 </p>
 
 <p>
+  <strong>Header:</strong>
+  <%= @about.header %>
+</p>
+
+<p>
   <strong>Text:</strong>
   <%= @about.text %>
 </p>
 
-<%= link_to 'Edit', admin_edit_about_path(@about) %>
+<%= link_to 'Edit', admin_edit_about_path(@about), class: "btn btn-sm btn-warning" %>
 </div>

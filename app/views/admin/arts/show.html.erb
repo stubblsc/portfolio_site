@@ -1,5 +1,7 @@
 <div class="col-md-4 offset-1"></br>
-<p id="notice"><%= notice %></p>
+<% if notice %>
+<p class="alert alert-success"><%= notice %></p>
+<% end %>
 
 <p>
   <strong>Title:</strong>
@@ -32,6 +34,6 @@
   <%= @art.order %>
 </p>
 
-<%= link_to 'Edit', edit_admin_art_path(@art) %> |
-<%= link_to 'Back', admin_arts_path(@art) %>
+<%= link_to 'Edit', edit_admin_art_path(@art), class: "btn btn-sm btn-warning" %> |
+<%= link_to 'Back', admin_arts_path(@art), class: "btn btn-sm btn-danger" %>
 </div>

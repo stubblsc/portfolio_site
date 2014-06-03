@@ -80,7 +80,7 @@ class Admin::AdminController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:text, :background)
+      params.require(:home).permit(:text, :background, :header)
     end
 
     # Use callbacks to share common setup or constraints between actions.
@@ -89,6 +89,6 @@ class Admin::AdminController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def about_params
-      params.require(:about).permit(:text, :background)
+      params.require(:about).permit(:text, :background, :header)
     end
 end

@@ -5,9 +5,9 @@ class HomeController < ApplicationController
 	end
 
 	def about
-  	  @about = About.first
+    @about = About.first
 	  @sections_list = Section.order(:order)
-    end
+  end
 
 	def contact
 		@sections_list = Section.order(:order)

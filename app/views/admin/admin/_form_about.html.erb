@@ -1,16 +1,20 @@
 <%= form_for([:admin, @about]) do |f| %>
   <% if @about.errors.any? %>
-    <div id="error_explanation">
-      <h2 class="label label-danger"><%= pluralize(@about.errors.count, "error") %> prohibited this about from being saved:</h2>
+    <div class="alert alert-warning" id="error_explanation">
+      <h2><%= pluralize(@about.errors.count, "error") %> prohibited this about from being saved:</h2>
 
       <ul>
       <% @about.errors.full_messages.each do |msg| %>
-        <li class="label label-danger"><%= msg %></li>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :header%><br>
+    <%= f.text_area :header, class: "form-control" %>
+  </div>
   <div class="field">
     <%= f.label :background %><br>
     <%= f.file_field :background, class: "form-control" %>
