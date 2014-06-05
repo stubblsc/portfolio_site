@@ -72,10 +72,10 @@ MomArtSite::Application.configure do
     :address => "smtp.gmail.com",
     :port => "587",
     :authentication => :plain,
-    :user_name => "stub6225.junk"
-    :password => "stubble1"
-    :domain => "gmail.com"
-    :enable_starttls_auto => true
+    :user_name => "stub6225.junk",
+    :password => "stubble1",
+    :domain => "gmail.com",
+    :enable_starttls_auto => true,
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
