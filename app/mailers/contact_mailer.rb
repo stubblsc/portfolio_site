@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "app26027115@heroku.com"
 
   def contact(subject, from_email, from_name, message)
   	#subject = params[:subject]
