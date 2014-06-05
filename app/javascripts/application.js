@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require lightbox.min.js
 
 $( document ).ready(function() {
 	$('img').on('dragstart', function(event) { event.preventDefault(); });
