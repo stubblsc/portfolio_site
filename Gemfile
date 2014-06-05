@@ -50,10 +50,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'paperclip'
+#gem 'paperclip'
 
-gem 'twitter-bootswatch-rails'
+#gem 'twitter-bootswatch-rails'
 
-gem 'twitter-bootswatch-rails-helpers'
+#gem 'twitter-bootswatch-rails-helpers'
 
 #gem "letter_opener", :group => :development
