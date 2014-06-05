@@ -4,7 +4,7 @@
   <title>MomArtSite</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" %>
-  <%= stylesheet_link_tag    "lightbox" %>
+  <%= stylesheet_link_tag    "lightbox" , media: "all", "data-turbolinks-track" => true%>
       <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 
   <%= stylesheet_link_tag    "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" %>
