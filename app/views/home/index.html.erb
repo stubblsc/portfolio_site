@@ -3,8 +3,8 @@
 <br>
 <div class="col-md-12">
 	<div class="col-md-1"></div>
-	<% if @home.background.exists? %>
-		<div class = "col-md-10 jumbotron background" %> 
+	<% if not @home.nil? %>
+		<div class = "col-md-10 jumbotron background" %>
 			<div class="col-md-12 text">
 				<h1><%= @home.header %></h1>
 			</div>

@@ -1,16 +1,16 @@
 class HomeController < ApplicationController
 	def index
 	  @home = Home.first
-	  @sections_list = Section.order(:order)
+	  @sections_list = Section.all.order(:order)
 	end
 
 	def about
     @about = About.first
-	  @sections_list = Section.order(:order)
+	  @sections_list = Section.all.order(:order)
   end
 
 	def contact
-		@sections_list = Section.order(:order)
+		@sections_list = Section.all.order(:order)
 	end
 
 	def sendmail
@@ -18,7 +18,7 @@ class HomeController < ApplicationController
 	end
 
 	def sections
-		@sections_list = Section.order(:order)
+		@sections_list = Section.all.order(:order)
 		@section = Section.where(id: params[:id]).first
 		@arts = Art.where(section_id: params[:id]).order(:order)
 	end

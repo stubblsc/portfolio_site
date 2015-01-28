@@ -8,7 +8,7 @@ group :production do
   gem 'pg'
 end
 group :development, :test do
-  #gem 'sqlite3'
+  gem 'sqlite3'
 end
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
@@ -51,6 +51,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'paperclip'
+gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
 
 gem 'twitter-bootswatch-rails'
 
@@ -59,3 +60,7 @@ gem 'twitter-bootswatch-rails-helpers'
 #gem "letter_opener", :group => :development
 
 gem 'rails_12factor', group: :production
+
+gem 'figaro'
+
+gem 'seed_dump'
