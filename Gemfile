@@ -10,6 +10,7 @@ end
 group :development, :test do
   gem 'sqlite3'
 end
+
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
 
@@ -52,6 +53,7 @@ end
 
 gem 'paperclip'
 gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem 'aws-sdk'
 
 gem 'twitter-bootswatch-rails'
 
