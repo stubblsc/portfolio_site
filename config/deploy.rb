@@ -12,6 +12,8 @@ set :user,            'deploy'
 set :puma_threads,    [1, 6]
 set :puma_workers,    1
 
+set :rails_env, :production
+
 # set :ssh_options, {
 #   forward_agent: true,
 #   port: 4321
