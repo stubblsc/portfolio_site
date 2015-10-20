@@ -7,7 +7,7 @@ server '104.236.75.163', roles: [:web, :app, :db], primary: true
 set :repo_url,        'git@github.com:stubblsc/portfolio_site.git'
 set :scm,             :git
 set :branch,          'master'#:master#423.to_s.to_sym
-set :application,     'picontrol'
+set :application,     'portfolio_site'
 set :user,            'deploy'
 set :puma_threads,    [1, 6]
 set :puma_workers,    1
