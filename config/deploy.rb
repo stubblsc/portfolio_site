@@ -1,3 +1,6 @@
+# config valid only for current version of Capistrano
+lock '3.4.0'
+
 # Change these
 server '104.236.75.163', port: 80, roles: [:web, :app, :db], primary: true
 
@@ -5,7 +8,7 @@ set :repo_url,        'git@github.com:stubblsc/portfolio_site.git'
 set :application,     'portfolio_site'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
-set :puma_workers,    0
+set :puma_workers,    1
 
 # Don't change these unless you know what you're doing
 set :pty,             true
