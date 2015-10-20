@@ -9,11 +9,11 @@ state_path "/home/deploy/apps/portfolio_site/shared/tmp/pids/puma.state"
 stdout_redirect '/home/deploy/apps/portfolio_site/current/log/puma.error.log', '/home/deploy/apps/portfolio_site/current/log/puma.access.log', true
 
 
-threads 12,48
+threads 1,6
 
 bind 'unix:///home/deploy/apps/portfolio_site/shared/tmp/sockets/portfolio_site-puma.sock'
 
-workers 12
+workers 1
 
 
 
