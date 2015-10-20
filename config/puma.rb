@@ -1,29 +1,33 @@
-# Change to match your CPU core count
-workers 1
+#!/usr/bin/env puma
 
-# Min and Max threads per worker
-threads 1, 6
+directory '/home/deploy/apps/portfolio_site/current'
+rackup "/home/deploy/apps/portfolio_site/current/config.ru"
+environment 'production'
 
-app_dir = File.expand_path("../..", __FILE__)
-shared_dir = "#{app_dir}/shared"
+pidfile "/home/deploy/apps/portfolio_site/shared/tmp/pids/puma.pid"
+state_path "/home/deploy/apps/portfolio_site/shared/tmp/pids/puma.state"
+stdout_redirect '/home/deploy/apps/portfolio_site/current/log/puma.error.log', '/home/deploy/apps/portfolio_site/current/log/puma.access.log', true
 
-# Default to production
-rails_env = ENV['RAILS_ENV'] || "production"
-environment rails_env
 
-# Set up socket location
-bind "unix://#{shared_dir}/sockets/puma.sock"
+threads 12,48
 
-# Logging
-stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{shared_dir}/log/puma.stderr.log", true
+bind 'unix:///home/deploy/apps/portfolio_site/shared/tmp/sockets/portfolio_site-puma.sock'
 
-# Set master PID and state locations
-pidfile "#{shared_dir}/pids/puma.pid"
-state_path "#{shared_dir}/pids/puma.state"
-activate_control_app
+workers 12
+
+
+
+preload_app!
+
+
+on_restart do
+  puts 'Refreshing Gemfile'
+  ENV["BUNDLE_GEMFILE"] = "/home/deploy/apps/portfolio_site/current/Gemfile"
+end
+
 
 on_worker_boot do
-  require "active_record"
-  ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
-  ActiveRecord::Base.establish_connection(YAML.load_file("#{app_dir}/config/database.yml")[rails_env])
+  ActiveSupport.on_load(:active_record) do
+    ActiveRecord::Base.establish_connection
+  end
 end
