@@ -1,7 +1,7 @@
 # Change these
 server '104.236.75.163', port: 80, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:stub6225/portfolio_site.git'
+set :repo_url,        'git@github.com:stubblsc/portfolio_site.git'
 set :application,     'portfolio_site'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
