@@ -76,7 +76,7 @@ namespace :deploy do
     end
   end
 
-  before :hook, :install
+  # before :hook, :install
   # before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
