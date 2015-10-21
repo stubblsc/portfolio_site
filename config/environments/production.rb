@@ -65,7 +65,7 @@ MomArtSite::Application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   #config.action_mailer.raise_delivery_errors = true
   #config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = {:host => "http://protected-journey-3036.herokuapp.com/"}
+  # config.action_mailer.default_url_options = {:host => "http://protected-journey-3036.herokuapp.com/"}
 
   config.action_mailer.delivery_method = :sendmail
   # config.action_mailer.smtp_settings = {

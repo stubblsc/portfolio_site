@@ -1,3 +1,20 @@
+set :port, 22
+set :user, 'rails'
+set :deploy_via, :remote_cache
+set :use_sudo, false
+
+server '159.203.118.165', roles: [:web, :app, :db], primary: true
+
+set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
+
+set :ssh_options, {
+  forward_agent: true,
+  auth_methods: %w(publickey),
+  user: 'rails',
+}
+
+set :rails_env, :production
+set :conditionally_migrate, true
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
