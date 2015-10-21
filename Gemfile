@@ -27,8 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# Use Puma as the app server
-gem 'puma'
+# Use Unicorn as the app server
+gem 'unicorn'
 
 # New Relic app monitoring
 gem 'newrelic_rpm'
@@ -67,7 +67,7 @@ group :development do
   gem 'capistrano-rvm',     require: false
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  gem 'capistrano3-unicorn'
   gem 'capistrano-sidekiq'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
