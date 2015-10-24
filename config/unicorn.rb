@@ -7,7 +7,7 @@ TIMEOUT=60
 
 # Path to your web application, sh'ld be also set in server's config.rb,
 # option "working_directory". Rack's config.ru is located here.
-APP_ROOT=/home/rails/apps/portfolio_site
+APP_ROOT=/home/rails/portfolio_site
 
 # Server's config.rb, it's not a rack's config.ru
 CONFIG_RB=/etc/unicorn.conf
