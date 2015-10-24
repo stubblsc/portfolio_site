@@ -7,6 +7,6 @@ class ContactMailer < ActionMailer::Base
   	#from_name = params[:from_name]
   	#message = params[:message]
 
-  	mail(to: "stub6225@gmail.com", reply_to: from_email, subject: subject, body: message + "\n\n-" + from_name)
+  	mail(to: "lstub56@gmail.com", reply_to: from_email, subject: subject, body: message + "\n\n-" + from_name)
   end
 end
