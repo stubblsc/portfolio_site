@@ -1,7 +1,7 @@
 # Change these
 server '104.131.114.129', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@guthub.com:stubblsc/portfolio_site.git'
+set :repo_url,        'git@github.com:stubblsc/portfolio_site.git'
 set :application,     'portfolio_site'
 set :user,            'deployer'
 set :puma_threads,    [4, 16]
