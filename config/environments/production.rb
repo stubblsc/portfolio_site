@@ -103,9 +103,9 @@ MomArtSite::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => "lynn-portfolio",
-      :access_key_id => "AKIAI24I3FBNTYHU65EQ",
-      :secret_access_key => "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"
+      :bucket => "stubblsc-portfolio",
+      :access_key_id => "AKIAJRSDGQZIVR7LL6QQ",
+      :secret_access_key => "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"
     }
   }
 end
