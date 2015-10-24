@@ -36,7 +36,7 @@ gem 'newrelic_rpm'
 # Image storage
 gem 'paperclip'
 gem 'rmagick', :git=>'http://github.com/rmagick/rmagick.git'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 # Bootstrap
 gem 'twitter-bootswatch-rails'
