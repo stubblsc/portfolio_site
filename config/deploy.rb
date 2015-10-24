@@ -3,7 +3,7 @@ lock '3.4.0'
 set :application, 'portfolio_site'
 set :repo_url, 'git@github.com:stubblsc/portfolio_site.git'
 
-ask :branch, 'master'
+set :branch, :master
 
 set :use_sudo, false
 set :bundle_binstubs, nil
