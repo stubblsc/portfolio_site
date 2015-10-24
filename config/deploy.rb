@@ -1,5 +1,5 @@
 # Change these
-server '104.131.114.129', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '104.131.114.129', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@guthub.com:stubblsc/portfolio_site.git'
 set :application,     'portfolio_site'
