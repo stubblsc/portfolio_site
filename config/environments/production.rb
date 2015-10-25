@@ -103,9 +103,9 @@ MomArtSite::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => "stubblsc-portfolio",
-      :access_key_id => "AKIAJRSDGQZIVR7LL6QQ",
-      :secret_access_key => "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"
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => AWS['AWS_SECRET_ACCESS_KEY']
     }
   }
 end
